@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 전체 페이지 스크롤 방지 */
+}
+/* 라이트 모드 스타일 */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: rgb(235, 235, 235);
+    
+  }
+  .a {
+    background-color: rgb(0, 255, 238);
+  }
+  .text {
+    color: rgb(0, 0, 255);
+  }
+  a {
+    color: rgb(0, 0, 255);
+  }
+
+  a:visited {
+    color: rgb(0, 0, 255);
+  }
+  .up {
+    background-image: url("https://i.postimg.cc/ZRgJwDKR/temp-Image-FBIJsi.avif");
+  }
+  .left {
+    background-image: url("https://i.postimg.cc/dV1wKYk1/temp-Imagef-Cx-Kib.avif");
+  }
+  .down {
+    background-image: url("https://i.postimg.cc/brpfVcfq/temp-Images2-KTYF.avif");
+  }
+  .right {
+    background-image: url("https://i.postimg.cc/qMBd8TGL/temp-Imagex-Ve4-Zf.avif");
+  }
+  .f {
+    background-color: rgb(235, 235, 235);
+  }
+  .section::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 255); /* 스크롤 핸들 색상 */
+  }
+  .section::-webkit-scrollbar-track {
+    background: rgb(215, 215, 215); /* 트랙 배경색 */
+  }
+  .section::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 190); /* 호버 시 색상 */
+  }
+}
+
+/* 다크 모드 스타일 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: rgb(37, 33, 41);
+  }
+
+  .a {
+    background-color: rgb(227, 72, 208);
+  }
+
+  .text {
+    color: rgb(182, 29, 141);
+  }
+  a {
+    color: rgb(182, 29, 141);
+  }
+
+  a:visited {
+    color: rgb(182, 29, 141);
+  }
+  .up {
+    background-image: url("https://i.postimg.cc/kG2FbdQy/temp-Imagemrhb-DD.avif");
+  }
+  .left {
+    background-image: url("https://i.postimg.cc/sgmcqKg7/temp-Image-YZIq-Kb.avif");
+  }
+  .down {
+    background-image: url("https://i.postimg.cc/nctGLNsq/temp-Image-WRvym8.avif");
+  }
+  .right {
+    background-image: url("https://i.postimg.cc/650npqxN/temp-Image0bpmv6.avif");
+  }
+  .f {
+    background-color: rgb(37, 33, 41);
+  }
+  .section::-webkit-scrollbar-thumb {
+    background: rgb(182, 29, 141);
+  }
+  .section::-webkit-scrollbar-track {
+    background: rgb(70, 65, 70); /* 트랙 배경색 */
+  }
+  .section::-webkit-scrollbar-thumb:hover {
+    background: rgb(227, 72, 208);
+  }
+}
+.text {
+  font-family: "agahnsangsoo2012", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px;
+  line-height: 1.5;
+}
+.b {
+  width: 100%;
+  height: 50px;
+}
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden; /* 넘침 제한 */
+  background-size: cover; /* 셀을 가득 채우면서 잘림 */
+  background-position: center; /* 중앙 정렬 */
+}
+.cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 세로로 4등분 */
+  width: 100%; /* 화면 전체 너비 */
+  height: 100%; /* 화면 전체 높이 */
+}
+
+.section {
+  overflow-y: auto; /* 각 영역의 세로 스크롤 활성화 */
+  height: auto;
+}
+.W {
+  width: 100%;
+  height: 150px;
+}
+.Z {
+  display: grid;
+  grid-template-columns: 12% 76% 12%;
+  width: 100%;
+  height: 100%;
+}
+.content {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box {
+  width: 160px;
+  height: 215px;
+  margin: 50px;
+  display: grid;
+  grid-template-rows: 179px auto;
+}
+
+.a {
+  position: relative; /* .a를 기준으로 절대 위치 지정 */
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+}
+.f {
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+}
+
+.a img {
+  width: 100%; /* .a에 맞게 너비 조정 */
+  height: 100%; /* .a에 맞게 높이 조정 */
+  object-fit: cover; /* 비율 유지하며 잘림 */
+  display: block; /* 블록 요소로 변경 */
+  transition: opacity 0.3s ease;
+}
+
+
+.a .text {
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+  opacity: 0; /* 기본적으로 숨김 */
+  transition: opacity 0.3s ease; /* 부드러운 전환 효과 */
+  z-index: 1; /* 텍스트가 이미지 위에 겹쳐서 나타나도록 */
+}
+
+.a:hover .text {
+  opacity: 1; /* 텍스트 표시 */
+}
+
+.section::-webkit-scrollbar {
+  width: 5px; /* 스크롤바 너비 */
+}
+
+.section::-webkit-scrollbar-thumb {
+  border-radius: 2px; /* 둥근 모서리 */
+  height: 225px;
+}
